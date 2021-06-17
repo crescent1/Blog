@@ -8,7 +8,7 @@
     </div>
 
     <div class="section-body">
-        SDSDS
+        Isi Dashboard
     </div>
 </section>
 

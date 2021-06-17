@@ -17,4 +17,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+/**
+ * Login / Logout
+ */
+Route::get('/login', 'LoginController@login')->name('login');
+Route::post('/login', 'LoginController@processLogin');
+Route::get('/logout', 'LoginController@logout')->name('logout');
+
 Route::get('/', 'BDashboardController@home');
