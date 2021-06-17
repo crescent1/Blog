@@ -24,4 +24,7 @@ Route::get('/login', 'LoginController@login')->name('login');
 Route::post('/login', 'LoginController@processLogin');
 Route::get('/logout', 'LoginController@logout')->name('logout');
 
-Route::get('/', 'BDashboardController@home');
+Route::middleware('auth')->group(function() {
+    Route::get('/', 'BDashboardController@index' )->name('dashboard');
+    // Route::post('/', 'DashboardController@index');
+});

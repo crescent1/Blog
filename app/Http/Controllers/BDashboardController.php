@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 
 class BDashboardController extends Controller
@@ -11,8 +12,12 @@ class BDashboardController extends Controller
      *
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function home()
+    public function index()
     {
-        return view('dashboard.index');
+        $user = Auth::user();
+
+        return view('dashboard.index', [
+            'user' => $user,
+        ]);
     }
 }

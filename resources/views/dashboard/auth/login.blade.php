@@ -15,6 +15,12 @@
 
                     <div class="card-body">
                         <form method="POST" action="#" class="needs-validation" novalidate="">
+                            @csrf
+                            @if (session('message'))
+                                <div class="alert alert-danger">
+                                    {{ session('message') }}
+                                </div>
+                            @endif
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>

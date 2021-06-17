@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function login()
     {
         return view('dashboard.auth.login');
@@ -23,10 +29,10 @@ class LoginController extends Controller
 
             $user = Auth::user();
 
-            if($user->status == 0) {
-                Auth::logout();
-                return redirect()->route('login')->with('message', 'Akun telah dihapus');
-            }
+            // if($user->status == 0) {
+            //     Auth::logout();
+            //     return redirect()->route('login')->with('message', 'Akun telah dihapus');
+            // }
 
             return redirect()->route('dashboard');
         }

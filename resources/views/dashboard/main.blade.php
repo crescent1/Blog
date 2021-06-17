@@ -5,13 +5,13 @@
 <div class="main-wrapper">
     <div class="navbar-bg"></div>
 
-    {{-- @if (Auth::check()) --}}
+    @if (Auth::check())
 
         @include('dashboard.header')
 
         @include('dashboard.sidebar')
 
-    {{-- @endif --}}
+    @endif
 
 
     <!-- Main Content -->
