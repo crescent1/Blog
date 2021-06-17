@@ -4,7 +4,7 @@
         <a href="index.html">{{ config('app.name')}}</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-        <a href="index.html">PB</a>
+        <a href="index.html">LB</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
