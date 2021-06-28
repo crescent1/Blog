@@ -28,3 +28,15 @@ Route::middleware('auth')->group(function() {
     Route::get('/', 'BDashboardController@index' )->name('dashboard');
     // Route::post('/', 'DashboardController@index');
 });
+
+/**
+ * route menu user
+ */
+Route::middleware('auth')->group(function () {
+    Route::get('/user', 'BUserController@index')->name('user.index');
+    Route::get('/user/create', 'BUserController@create')->name('user.create');
+    Route::post('/user/store', 'BUserController@store')->name('user.store');
+    Route::get('/user/edit/{admin}', 'BUserController@edit')->name('user.edit');
+    Route::post('/user/update', 'BUserController@update')->name('user.update');
+    Route::post('/user/destroy/{user}', 'BUserController@destroy')->name('user.destroy');
+});
