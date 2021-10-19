@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use Elibyy\TCPDF\Facades\TCPDF as PDF;
 use TCPDF as GlobalTCPDF;
-use Elibyy\TCPDF\Facades\TCPDF as PDF;
+// use Elibyy\TCPDF\Facades\TCPDF as PDF;
+use PDF;
 
 class DownloadController extends Controller
 {
