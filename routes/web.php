@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DownloadController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,4 +40,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/edit/{admin}', 'BUserController@edit')->name('user.edit');
     Route::post('/user/update', 'BUserController@update')->name('user.update');
     Route::post('/user/destroy/{user}', 'BUserController@destroy')->name('user.destroy');
+
+    Route::get('download/', [DownloadController::class, 'download'])->name('download');
 });
