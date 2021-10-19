@@ -15320,7 +15320,57 @@
      
 }
 
-        namespace Facade\Ignition\Facades { 
+        namespace Elibyy\TCPDF\Facades { 
+            /**
+     * 
+     *
+     */ 
+        class TCPDF {
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function reset()
+        {
+                        /** @var \Elibyy\TCPDF\TCPDF $instance */
+                        return $instance->reset();
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function changeFormat($format)
+        {
+                        return \Elibyy\TCPDF\TCPDF::changeFormat($format);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function setHeaderCallback($headerCallback)
+        {
+                        /** @var \Elibyy\TCPDF\TCPDF $instance */
+                        return $instance->setHeaderCallback($headerCallback);
+        }
+                    /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function setFooterCallback($footerCallback)
+        {
+                        /** @var \Elibyy\TCPDF\TCPDF $instance */
+                        return $instance->setFooterCallback($footerCallback);
+        }
+         
+    }
+     
+}
+
+    namespace Facade\Ignition\Facades { 
             /**
      * Class Flare.
      *
@@ -19355,6 +19405,7 @@ namespace  {
             class URL extends \Illuminate\Support\Facades\URL {}
             class Validator extends \Illuminate\Support\Facades\Validator {}
             class View extends \Illuminate\Support\Facades\View {}
+            class PDF extends \Elibyy\TCPDF\Facades\TCPDF {}
             class Flare extends \Facade\Ignition\Facades\Flare {}
             class Livewire extends \Livewire\Livewire {}
      
