@@ -46,7 +46,7 @@ class DownloadController extends Controller
         /**
          * @var string $textClosing
          */
-        $textClosing = "Data\n\n\n\n\n\\n\n\n\n\n\n\\n\n\n\\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n\n\n\\n\n\n\n\n\n\\n\n\n\n\n\n\n\n\n\n\n\\n\n\n\n\n\\n\n\n\n\\n\n\n\n\n\\n\n\n\n\n\n\\n\n\n\n\n\n\\n\n\n\nDemikian Rencana Anggaran Biaya ini kami ajukan, semoga dapat memenuhi kebutuhan Bapak/ Ibu dalam merealisasikan pelaksanaan pekerjaan tersebut, atas perhatian yang diberikan kami ucapkan Terima kasih.";
+        $textClosing = "Data\na\na\n\n\n\\n\n\n\n\n\n\\n\n\n\\n\n\n\n\n\\n\na\n\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\a\an\an\ana\n\an\\n\n\n\n\\n\n\n\n\n\\n\n\n\n\n\n\\n\n\n\n\n\n\\n\n\n\nDemikian Rencana Anggaran Biaya ini kami ajukan, semoga dapat memenuhi kebutuhan Bapak/ Ibu dalam merealisasikan pelaksanaan pekerjaan tersebut, atas perhatian yang diberikan kami ucapkan Terima kasih.";
 
         // PDF::setHeaderCallback(function($pdf) use ($logo, $title, $office, $email, $web, $wa){
 
@@ -94,8 +94,8 @@ class DownloadController extends Controller
         // $pdf->setPrintFooter(true);
         // $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
         // $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
-        $pdf->SetMargins(10, 5, 10);
-        $pdf->SetAutoPageBreak(true, 30);
+        $pdf->SetMargins(10, 35, 10);
+        $pdf->SetAutoPageBreak(true, 10);
         $pdf->setCellPaddings(0, 0, 0, 0);
         $pdf->setCellMargins(0, 0, 0, 0);
         $pdf->AddPage('P', 'A4');

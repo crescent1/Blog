@@ -42,4 +42,5 @@ Route::middleware('auth')->group(function () {
     Route::post('/user/destroy/{user}', 'BUserController@destroy')->name('user.destroy');
 
     Route::get('download/', [DownloadController::class, 'download'])->name('download');
+    Route::get('download1/', [DownloadController::class, 'download1'])->name('download1');
 });
