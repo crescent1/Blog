@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Modules\Pdf\Mypdf;
 use Illuminate\Http\Request;
-use TCPDF as GlobalTCPDF;
-// use Elibyy\TCPDF\Facades\TCPDF as PDF;
-use PDF;
+
 
 class DownloadController extends Controller
 {
@@ -88,12 +86,68 @@ class DownloadController extends Controller
         // PDF::lastPage();
         // PDF::Output('my_file.pdf');
 
-        $pdf = new Mypdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
-        $pdf->SetTitle('RSF-RAB');
+        // $pdf = new Mypdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+        // $pdf->SetTitle('RSF-RAB');
         // $pdf->setPrintHeader(true);
         // $pdf->setPrintFooter(true);
         // $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
         // $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+        // $pdf->SetMargins(10, 35, 10);
+        // $pdf->SetAutoPageBreak(true, 10);
+        // $pdf->setCellPaddings(0, 0, 0, 0);
+        // $pdf->setCellMargins(0, 0, 0, 0);
+        // $pdf->AddPage('P', 'A4');
+        // $pdf->MultiCell(190, 0, $textClosing, 0, 'L', false, 1, '', '', true);
+        // $pdf->Output('my_file.pdf');
+
+
+    }
+
+    /**
+     * testing
+     *
+     * @return void
+     */
+    public function download1()
+    {
+        /**
+         * @var string $logo
+         */
+        $logo = \View::make('dashboard.download.d-logo')->render();
+        /**
+         * @var string $title
+         */
+        $title = '<h1 class="mb-n2 sz-fontTitle">RAGA SPORT FLOORING</h1>';
+        /**
+         * @var string $office
+         */
+        $office = '<small class="mt-n1"><strong>Office : </strong>Jl. Wisma Katang Blok B VII no. 18 Rt.02 Rw.06 Kecamatan Ngasem
+        Kabupaten Kediri. Jawa Timur Kode Pos 64181</small>';
+        /**
+         * @var string $email
+         */
+        $email = '<small class="p-0 m-0"><strong>Email : </strong>ragasportflooring@gmail.com</small>';
+        /**
+         * @var string $web
+         */
+        $web = '<small class="p-0 m-0"><strong>Web : </strong>www.indoflooring.com</small>';
+        /**
+         * @var string $wa
+         */
+        $wa = '<small class="p-0 m-0"><strong>HP/WA : </strong>0811.3737.575</small>';
+
+        /**
+         * @var string $textClosing
+         */
+        $textClosing = "Data\na\na\n\n\n\\n\n\n\n\n\n\\n\n\n\\n\n\n\n\n\\n\na\n\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\na\a\an\an\ana\n\an\\n\n\n\n\\n\n\n\n\n\\n\n\n\n\n\n\\n\n\n\n\n\n\\n\n\n\nDemikian Rencana Anggaran Biaya ini kami ajukan, semoga dapat memenuhi kebutuhan Bapak/ Ibu dalam merealisasikan pelaksanaan pekerjaan tersebut, atas perhatian yang diberikan kami ucapkan Terima kasih.";
+
+        $pdf = new Mypdf(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+        $pdf->CustomHeaderText = "Header Page 1";
+        $pdf->SetTitle('RSF-RAB');
+        $pdf->setPrintHeader(true);
+        $pdf->setPrintFooter(true);
+        $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+        $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
         $pdf->SetMargins(10, 35, 10);
         $pdf->SetAutoPageBreak(true, 10);
         $pdf->setCellPaddings(0, 0, 0, 0);
@@ -101,7 +155,5 @@ class DownloadController extends Controller
         $pdf->AddPage('P', 'A4');
         $pdf->MultiCell(190, 0, $textClosing, 0, 'L', false, 1, '', '', true);
         $pdf->Output('my_file.pdf');
-
-
     }
 }
